@@ -1,2 +1,2 @@
-# HotkeyHero
-Alkalmazás és Weboldal
+# Hotkey-Hero
+ 

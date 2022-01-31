@@ -1,0 +1,31 @@
+210910-13:48:12.729  INFO [ 1] <Global>                            Initializing GitHubForUnity:'v1.4.0' Unity:'v2020.3.14f1'
+210910-13:48:36.260  INFO [ 1] <Global>                            Trace Logging Enabled
+210910-13:48:44.027 TRACE [ 1] <GitHubAuthenticationView>          InitializeView
+210910-13:48:48.345 TRACE [ 6] <OAuthCallbackManager>              OnCallback: cd7caa48-a946-4b7f-a5c2-fb1af8f4885f
+210910-13:48:48.349 TRACE [38] <ProcessWrapper>                    Running 'C:\Program Files\Unity\Editor\Data\Tools\nodejs\node.exe "C:\Users\695205\AppData\Local\GitHubUnity\octorun\src\bin\app.js" token -h github.com'
+210910-13:48:49.632 TRACE [41] <ProcessWrapper>                    Running 'C:\Program Files\Unity\Editor\Data\Tools\nodejs\node.exe "C:\Users\695205\AppData\Local\GitHubUnity\octorun\src\bin\app.js" validate'
+210910-13:48:50.732  WARN [41] <LoginManager>                      Login Exception
+System.InvalidOperationException: Authentication validation failed
+  at GitHub.Unity.LoginManager.RetrieveUsername (System.String token, GitHub.Unity.UriString host) [0x00069] in C:\projects\unity\src\GitHub.Api\Authentication\LoginManager.cs:232 
+  at GitHub.Unity.LoginManager.LoginWithToken (GitHub.Unity.UriString host, System.String token) [0x00035] in C:\projects\unity\src\GitHub.Api\Authentication\LoginManager.cs:58 
+=======
+  at GitHub.Unity.LoginManager.LoginWithToken (GitHub.Unity.UriString host, System.String token) [0x00057] in C:\projects\unity\src\GitHub.Api\Authentication\LoginManager.cs:66 
+  at GitHub.Unity.ApiClient+<>c__DisplayClass20_0.<LoginWithToken>b__0 () [0x00000] in C:\projects\unity\src\GitHub.Api\Application\ApiClient.cs:265 
+  at GitHub.Unity.FuncTask`1+<>c__DisplayClass6_0[T].<.ctor>b__0 (System.Boolean _) [0x00000] in C:\projects\unity\src\GitHub.Api\Tasks\ActionTask.cs:427 
+  at GitHub.Unity.FuncTask`1[T].RunWithReturn (System.Boolean success) [0x00010] in C:\projects\unity\src\GitHub.Api\Tasks\ActionTask.cs:454 
+  at GitHub.Unity.TaskBase`1[TResult].RunSynchronously () [0x00049] in C:\projects\unity\src\GitHub.Api\Tasks\TaskBase.cs:685 
+  at System.Threading.Tasks.Task`1[TResult].InnerInvoke () [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.ExecutionContextCallback (System.Object obj) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.ExecuteWithThreadLocal (System.Threading.Tasks.Task& currentTaskSlot) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.ExecuteEntry (System.Boolean bPreventDoubleExecution) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.TaskScheduler.TryExecuteTask (System.Threading.Tasks.Task task) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at GitHub.Unity.ThreadPerTaskScheduler+<>c__DisplayClass4_0.<QueueTask>b__0 () [0x00000] in C:\projects\unity\src\GitHub.Api\Tasks\ConcurrentExclusiveInterleave.cs:440 
+  at System.Threading.ThreadHelper.ThreadStart_Context (System.Object state) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.ExecutionContext.RunInternal (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state, System.Boolean preserveSyncCtx) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.ExecutionContext.Run (System.Threading.ExecutionContext executionContext, System.Threading.ContextCallback callback, System.Object state) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.ThreadHelper.ThreadStart () [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+210910-13:51:11.726 TRACE [ 8] <UsageTracker>                      Already sent today
