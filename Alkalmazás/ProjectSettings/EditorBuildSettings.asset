@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Rhythm Game Tutorial/Scenes/Start.unity
+    guid: 19e86d00091c22c458100c3634f47721
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Game-Menu.unity
+    guid: 10e80f3ea84ae3f4dbd39a3d8dd1a871
   m_configObjects: {}

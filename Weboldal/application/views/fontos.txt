@@ -1,0 +1,55 @@
+<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" id="bgvideo">
+        <source src="media/background.mp4" type="video/mp4">
+        <nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+  <img src="logo.png" class="img-circle"width="150" height="50"> 
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.php?menu=home">Főoldal</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >Regisztráció</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >Belépés</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Letöltés</a>
+        </li>
+        
+    </div>
+  </div>
+</nav>
+
+
+2Nav elem debug!
+ <li class="nav-item">
+        <a class="nav-link" href="<?php base_url(); ?>regisztracio">Regisztráció</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="<?php base_url(); ?>information">Információk</a>
+        </li>
+
+IT MIGHT HELP {
+        $this->load->helper('url');
+}
+
+!!!! DEBUG !!!!
+<?php if($this->session->flashdata('success')!==NULL): ?>
+        <div class="container">
+            <div class="alert alert-success">
+            <?php echo $this->session->flashdata('success');?>
+        </div>
+    </div>
+    <?php endif; ?>
+    <?php if($this->session->flashdata('success')!==NULL): ?>
+        <div class="container">
+            <div class="alert alert-danger">
+          <?php echo $this->session->flashdata('success');?>
+        </div>
+    </div>
+    <?php endif; ?>

@@ -20,6 +20,7 @@ public class hit_success : MonoBehaviour
             if (canPress)
             {
                 gameObject.SetActive(false);
+                Manager.instance.hitNote();
             }
         }
     }
@@ -29,6 +30,7 @@ public class hit_success : MonoBehaviour
         if (other.tag == "Activator")
         {
             canPress = true;
+            
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -36,6 +38,7 @@ public class hit_success : MonoBehaviour
         if (other.tag == "Activator")
         {
             canPress = false;
+            
         }
     }
 }

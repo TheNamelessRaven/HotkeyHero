@@ -15,6 +15,7 @@ public class falldown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (!Started)
         {
             if (Input.anyKeyDown)
