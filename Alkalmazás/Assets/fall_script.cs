@@ -10,7 +10,7 @@ public class fall_script : MonoBehaviour
     
     void Start()
     {
-        beatTempo = beatTempo / 60f;
+        
     }
     // Update is called once per frame
     void Update()

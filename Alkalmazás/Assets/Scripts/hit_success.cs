@@ -6,10 +6,14 @@ public class hit_success : MonoBehaviour
 {
     public bool canPress;
     public KeyCode Key;
+   
+
+    public object Manager { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,13 +24,15 @@ public class hit_success : MonoBehaviour
             if (canPress)
             {
                 gameObject.SetActive(false);
-                Manager.instance.hitNote();
+                GameManager.instance.NoteHit();
+                
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Hit!");
         if (other.tag == "Activator")
         {
             canPress = true;
@@ -35,10 +41,11 @@ public class hit_success : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
+        Debug.Log("Missed");
         if (other.tag == "Activator")
         {
             canPress = false;
-            
+            GameManager.instance.NoteMissed();
         }
     }
 }
