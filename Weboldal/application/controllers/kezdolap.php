@@ -3,9 +3,9 @@
 defined('BASEPATH') or exit ("No direct script allowed");
 class Kezdolap extends CI_Controller{
   
-  public function _construct(){
-    parent::_construct();
-    $this->load->helper('url_helper');
+  public function __construct(){
+    parent::__construct();
+    $this->load->helper('url');
     $this->load->library('session');
     $this->load->model('users');
   }

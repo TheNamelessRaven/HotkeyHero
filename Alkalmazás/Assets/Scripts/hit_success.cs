@@ -6,6 +6,7 @@ public class hit_success : MonoBehaviour
 {
     public bool canPress;
     public KeyCode Key;
+    public GameObject hitEffect,good,bad;
    
 
     public object Manager { get; private set; }

@@ -1,14 +1,14 @@
 <?php
 
 defined('BASEPATH') or exit ("No direct script allowed");
-class Kezdolap extends CI_Controller{
+class Users extends CI_Controller{
   
-  public function _construct(){
-    parent::_construct();
+  public function __construct(){
+    parent::__construct();
     $this->load->database();
-
   }
-  public insert($data){
+  public function insert($data){
       $this->db->insert('user',$data);
       return $this->db->insert_id();
   }
+}

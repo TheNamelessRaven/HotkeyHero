@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game-Menu.unity
     guid: 10e80f3ea84ae3f4dbd39a3d8dd1a871
-  - enabled: 0
+  - enabled: 1
     path: Assets/Rhythm Game Tutorial/Scenes/Level-tutorial.unity
     guid: 19e86d00091c22c458100c3634f47721
   m_configObjects: {}
