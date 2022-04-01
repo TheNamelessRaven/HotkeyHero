@@ -22,7 +22,7 @@
     </script>
     <?php endif;?>
     
-    <?php if($this->session->flashdata('success')!==NULL): ?> 
+    <?php /*if($this->session->flashdata('success')!==NULL): ?> 
         <div class="container">
             <div class="alert alert-success">
             <?php echo $this->session->flashdata('success');?>
@@ -35,8 +35,8 @@
           <?php echo $this->session->flashdata('success');?>
         </div>
     </div>
-    <?php endif; ?>
-    
+    <?php endif; */?>
+
 </head>
 <video playsinline="/media/playsinline" autoplay="autoplay" muted="muted" loop="loop" id="bgvideo">
         <source src="media/background.mp4" type="video/mp4">
