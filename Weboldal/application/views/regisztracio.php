@@ -15,7 +15,7 @@
             <input type="text" class="form-control" id="email" name="email" placeholder="email"required>
       </div>
       <div class="form-group col-md-12 text-center">
-            <a class="link-danger">Feltételek</a>
+            <a class="link-danger" href="<?php base_url();?>agreement">Feltételek</a>
             <input type="checkbox" class="form-control" id="agree" name="agree" required>
       </div>
       <div class="form-group col-md-12 text-center">

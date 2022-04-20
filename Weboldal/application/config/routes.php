@@ -54,7 +54,11 @@ $route['regisztracio']['POST']='kezdolap/regisztracio_post';
 $route['belepes']['GET']='kezdolap/belepes';
 $route['belepes']['POST']='kezdolap/belepes_post';
 $route['information']='kezdolap/information';
-
+$route['agreement']='kezdolap/agreement';
+$route['ranglista']='kezdolap/ranglista';
+$route['profile']='kezdolap/profile';
+$route['download']='kezdolap/download';
+$route['belepett']='kezdolap/belepett';
 
 $route['default_controller'] = 'kezdolap';
 $route['404_override'] = '';

@@ -55,3 +55,12 @@ h3{
 p{
   color:white;
 }
+img {
+  width: 25%;
+  height:25%;
+  height: auto;
+}
+#vid {
+  width: 50%;
+  height:50%;
+}

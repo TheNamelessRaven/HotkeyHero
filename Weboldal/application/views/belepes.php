@@ -1,4 +1,5 @@
 <div class="container mt-3">
+<?php if($this->session->userdata('user')==NULL):?>
 <h1>Bejelentkezes<h1>
     <form action="<?php base_url();?>belepes" method="POST">
 <div class="form-group col-md-12 text-center">
@@ -12,4 +13,7 @@
 </div>
 </div>
 </form>
+<?php else:?>
+<H1>Üdvözöllek az oldalamon!</H1>
+<?php endif;?>
 </div>
