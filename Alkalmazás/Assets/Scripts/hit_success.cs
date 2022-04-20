@@ -6,7 +6,7 @@ public class hit_success : MonoBehaviour
 {
     public bool canPress;
     public KeyCode Key;
-    public GameObject hitEffect,good,bad;
+    //public GameObject hitEffect,good,bad;
    
 
     public object Manager { get; private set; }
@@ -24,9 +24,13 @@ public class hit_success : MonoBehaviour
         {
             if (canPress)
             {
-                gameObject.SetActive(false);
-                GameManager.instance.NoteHit();
                 
+                GameManager.instance.NoteHit();
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                GameManager.instance.ButtonMissed();
             }
         }
     }
@@ -42,11 +46,15 @@ public class hit_success : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("Missed");
-        if (other.tag == "Activator")
+        if (gameObject.activeSelf)
         {
-            canPress = false;
-            GameManager.instance.NoteMissed();
+            Debug.Log("Missed");
+            if (other.tag == "Activator")
+            {
+                canPress = false;
+                GameManager.instance.NoteMissed();
+                gameObject.SetActive(false);
+            }
         }
     }
 }

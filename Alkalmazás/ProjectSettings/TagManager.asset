@@ -45,3 +45,6 @@ TagManager:
   - name: hit
     uniqueID: 2037530377
     locked: 0
+  - name: Menu
+    uniqueID: 3041817013
+    locked: 0

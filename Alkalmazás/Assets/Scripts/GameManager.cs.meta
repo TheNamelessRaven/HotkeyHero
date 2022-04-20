@@ -3,7 +3,12 @@ guid: 00c7bd9e9b4a97e429ef2a2596a6bfe0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - circle: {fileID: 3620653778431140962, guid: f7f5e82c97bfdcf42b02dd062ba9079a, type: 3}
+  - theMusic: {instanceID: 0}
+  - beatTempo: {instanceID: 0}
+  - scoreText: {instanceID: 0}
+  - multi: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

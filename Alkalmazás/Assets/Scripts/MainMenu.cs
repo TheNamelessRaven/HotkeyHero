@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
+    AudioSource theMusic;
+    int soundv = 100;
     public void ExitBtn()
     {
         Application.Quit();
@@ -11,14 +13,26 @@ public class MainMenu : MonoBehaviour
     }
     public void TutorialBtn()
     {
-        SceneManager.LoadScene("Level-Tutorial");
+        SceneManager.LoadScene("Game-Tutorial");
     }
     public void StartBtn()
     {
         Debug.Log("A játék elindult! ");
     }
-    public void Settings()
+    public void Level1()
     {
-        Debug.Log("Megnyílik a Settings fül");
+        SceneManager.LoadScene("Game-Level 1");
     }
+    public void Level2()
+    {
+        SceneManager.LoadScene("Game-Level 2");
+    }
+    public void Level3()
+    {
+        SceneManager.LoadScene("Game-Level 3");
+    }
+    private void Update()
+    {
+        
+}
 }

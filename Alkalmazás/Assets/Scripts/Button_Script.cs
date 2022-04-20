@@ -5,6 +5,7 @@ using System;
 
 public class Button_Script : MonoBehaviour
 {
+    public static bool gameIsPaused;
     private SpriteRenderer theSR;
     public Sprite defaultImage;
     public Sprite pressedImage;
@@ -27,6 +28,6 @@ public class Button_Script : MonoBehaviour
         {
             theSR.sprite = defaultImage;
         }
-
+       
     }
 }
