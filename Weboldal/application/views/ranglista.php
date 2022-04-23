@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" >
 <H1>Ez lenne a ranglista!</H1>
-<table class="table-dark col-md-12">
+<table class="table-dark">
   <thead>
     <tr>
       <th scope="col"class="h1">Helyezés</th>

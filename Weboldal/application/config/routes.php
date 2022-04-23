@@ -60,7 +60,7 @@ $route['profile']='kezdolap/profile';
 $route['download']='kezdolap/download';
 $route['belepett']='kezdolap/belepett';
 $route['logout']='kezdolap/logout';
-
+$route['admin']='kezdolap/admin';
 
 $route['default_controller'] = 'kezdolap';
 $route['404_override'] = '';

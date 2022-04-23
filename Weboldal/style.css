@@ -68,3 +68,11 @@ img {
   text-size-adjust: 30px;
   size:100px;
 }
+#user{
+    opacity: 0.7;
+    background-color: grey;
+}
+#user_text{
+  font-size: large;
+  color:white;
+}

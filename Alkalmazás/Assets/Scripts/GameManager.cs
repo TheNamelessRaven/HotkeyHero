@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public KeyCode pause;
+    bool pause=true;
     public AudioSource theMusic;
     public bool Play;
     public bool Started=false;
@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public int Score;
     public int Hitscore = 100;
+    public GameObject pauseScreen;
     public GameObject resultScreen;
     public Text finalScore;
     public float totalnotes;
@@ -36,6 +37,20 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+            Debug.Log("Pause");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ResumeGame();
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("Game-Menu");
+        }
         if (!Play)
         {
             if (Input.anyKeyDown)
@@ -51,35 +66,24 @@ public class GameManager : MonoBehaviour
                     Play = true;
                     beatTempo.Started = true;
                     Debug.Log("Zene");
-                    if (Play)
-                    {
-                        Play = false;
-                        Time.timeScale = 0;
-                        PauseGame();
-                        Debug.Log("Pause");
-                        if (!Play ) 
-                        {
-                            Start();
-                        }
-                    }
                    
-
-
                 }
             }
             
             }
         else
         {
-            if (!theMusic.isPlaying && !resultScreen.activeInHierarchy)
-            {
-                Started = false;
-                resultScreen.SetActive(true);
-                finalScore.text = "" + Score;
-                Time.timeScale = 0;
-                SceneManager.LoadScene("Game-Menu");
-                
-            }
+                if (!theMusic.isPlaying && !resultScreen.activeInHierarchy)
+                {
+                    Started = false;
+                if (pause = false)
+                {
+                    resultScreen.SetActive(true);
+                    finalScore.text = "" + Score;
+                    SceneManager.LoadScene("Game-Menu");
+                }
+                }
+            
         }
 
     }
@@ -120,19 +124,19 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + Score;
         currentMulti = 1;
     }
-    public void Music()
-    {
-        theMusic.volume = 0;
-    }
     public void PauseGame()
     {
-
+        
+        pauseScreen.SetActive(true);
         Time.timeScale = 0;
+        pause = true;
         theMusic.Pause();
     }
     public void ResumeGame()
     {
+        pauseScreen.SetActive(false);
         Time.timeScale = 1;
         theMusic.Play();
+        pause = false;
     }
 }

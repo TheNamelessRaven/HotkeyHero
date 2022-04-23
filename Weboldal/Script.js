@@ -5,5 +5,7 @@ function logout() {
       alert("Kijelentkeztél!");
       //sessionStorage.removeItem('user');
 }
-
+function password(){
+  alert("LETS GOOOOOOOOOO!");
+}
   

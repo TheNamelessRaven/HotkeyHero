@@ -768,9 +768,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 344416684}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8337d083b06b72e4d95961a947322bdb, type: 3}
+  m_Script: {fileID: 11500000, guid: c81e47f1fc586ce4884cce2e930ee6f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  login_text: {fileID: 0}
+  password_text: {fileID: 0}
+  login_button: {fileID: 0}
 --- !u!1 &352971931
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,6 +924,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 980261330}
+  - {fileID: 788819475}
   - {fileID: 1760163259}
   m_Father: {fileID: 344416688}
   m_RootOrder: 3
@@ -939,15 +943,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 354987183}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7da4858a69a39646b72e38f25cd5ed5, type: 3}
+  m_Script: {fileID: 11500000, guid: c81e47f1fc586ce4884cce2e930ee6f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  username: {fileID: 0}
-  password: {fileID: 0}
-  errorMessages: {fileID: 0}
-  progressCircle: {fileID: 0}
-  loginButton: {fileID: 1760163260}
-  url: 
+  login_text: {fileID: 0}
+  password_text: {fileID: 0}
+  login_button: {fileID: 1760163260}
 --- !u!1 &392879998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,12 +1312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7da4858a69a39646b72e38f25cd5ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  username: {fileID: 0}
-  password: {fileID: 0}
-  errorMessages: {fileID: 0}
-  progressCircle: {fileID: 0}
-  loginButton: {fileID: 0}
-  url: 
 --- !u!1 &663798826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,15 +1813,15 @@ RectTransform:
   m_GameObject: {fileID: 788819474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 1171077241}
-  m_Father: {fileID: 980261330}
+  m_Father: {fileID: 354987184}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -39.2}
+  m_AnchoredPosition: {x: -51, y: 39.400036}
   m_SizeDelta: {x: 160, y: 31.684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &788819476
@@ -2159,7 +2154,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 344416689}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ExitBtn
         m_Mode: 1
@@ -2240,7 +2235,6 @@ RectTransform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 1807817635}
-  - {fileID: 788819475}
   m_Father: {fileID: 354987184}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3321,7 +3315,7 @@ RectTransform:
   m_Children:
   - {fileID: 1349759951}
   m_Father: {fileID: 354987184}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3371,7 +3365,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1760163261}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 344416689}
+        m_TargetAssemblyTypeName: Login, Assembly-CSharp
+        m_MethodName: Login_btn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1760163261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3627,7 +3633,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 344416689}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: StartBtn
         m_Mode: 1
@@ -4124,7 +4130,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 344416689}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: TutorialBtn
         m_Mode: 1

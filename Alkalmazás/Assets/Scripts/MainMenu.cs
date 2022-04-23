@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
+    bool login = false;
     AudioSource theMusic;
     int soundv = 100;
     public void ExitBtn()
@@ -31,6 +32,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Game-Level 3");
     }
+    
     private void Update()
     {
         

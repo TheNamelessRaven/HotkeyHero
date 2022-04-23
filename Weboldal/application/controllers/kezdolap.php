@@ -59,6 +59,21 @@ class Kezdolap extends CI_Controller{
     $this->load->view('head',['oldal'=>'profile']);
     $this->load->view('profile');
     $this->load->view('foot');
+    $this->load->library('form_validation');
+  }
+  public function admin(){
+  
+    //redirect(belepes);
+      $this->load->view('head');
+      $this->load->view('admin');
+      $this->load->view('foot');
+      $this->load->library('form_validation');
+  }
+  public function profile_post(){
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('password','password','trim|required');
+    $this->form_validation->set_rules('password_change','password_chane','trim|required|matches[password]');
+    $this->form_validation->set_rules('password_change','password_change','trim|required|matches[password_change2]');
   }
   public function ranglista(){
     $this->load->model('Rangs');
