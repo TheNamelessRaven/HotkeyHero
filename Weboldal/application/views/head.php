@@ -46,8 +46,8 @@
             <li class="nav-item" id="profile">
             <a class="nav-link" href="<?php base_url()?>profile">Profil <span class="sr-only"></span></a>
             <li class="nav-item" id="logout">
-            <a class="nav-link" href="<?php base_url()?>belepes"onClick="logout()">Kijelentkezes <span class="sr-only"></span></a>
-
+            <a class="nav-link" href="<?php base_url()?>logout" onclick="logout()">Kijelentkezes <span class="sr-only"></span></a>
+            
             <?php else:?>
 
             <li class="nav-item" id="belepes">
@@ -58,7 +58,6 @@
             </li>
             <li class="nav-item" id="informacio">
             <a class="nav-link" href="<?php base_url();?>information">Információk</a>
-            
             <?php endif; ?>
             </li>
             </ul>

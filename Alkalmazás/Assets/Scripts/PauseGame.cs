@@ -6,7 +6,7 @@ using UnityEngine;
 public class PauseGame : MonoBehaviour
 {
     public static bool gameIsPaused;
-    // Start is called before the first frame update
+    public string pauseKey;
     void Start()
     {
         
@@ -15,6 +15,9 @@ public class PauseGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButton(pauseKey))
+        {
+            ;
+        }
     }
 }

@@ -7,7 +7,8 @@ class Kezdolap extends CI_Controller{
     parent::__construct();
     $this->load->helper('url');
     $this->load->library('session');
-    $this->load->model('users');
+    $this->load->model('Users');
+    
   }
   
   
@@ -23,6 +24,12 @@ class Kezdolap extends CI_Controller{
         $this->load->view('agreement');
         $this->load->view('foot');
       }    
+      public function logout()
+      {
+        $this->session->sess_destroy();
+        redirect('belepes');
+      }
+    
   public function regisztracio()
   {
    if ($this->session->userdata('user')!==NULL){
@@ -54,8 +61,10 @@ class Kezdolap extends CI_Controller{
     $this->load->view('foot');
   }
   public function ranglista(){
+    $this->load->model('Rangs');
+    $data["fetch_data"]=$this->Rangs->fetch_data();
     $this->load->view('head',['oldal'=>'ranglista']);
-    $this->load->view('ranglista');
+    $this->load->view('ranglista',$data);
     $this->load->view('foot');
   }
   public function information()

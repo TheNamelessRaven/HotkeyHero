@@ -12,5 +12,6 @@
           <img src="/media/level2.jpg">
           <img src="/media/level3.jpg">
           </div> 
+          
 </form>
 </div>

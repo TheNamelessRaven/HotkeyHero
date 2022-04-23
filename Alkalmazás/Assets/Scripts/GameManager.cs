@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public string inputName;
+    public KeyCode pause;
     public AudioSource theMusic;
     public bool Play;
     public bool Started=false;
@@ -51,11 +51,13 @@ public class GameManager : MonoBehaviour
                     Play = true;
                     beatTempo.Started = true;
                     Debug.Log("Zene");
-                    if (Input.GetKey(inputName))
+                    if (Play)
                     {
+                        Play = false;
+                        Time.timeScale = 0;
                         PauseGame();
-                        Debug.Log("Menu!");
-                        if (Input.GetKey("play"))
+                        Debug.Log("Pause");
+                        if (!Play ) 
                         {
                             Start();
                         }
@@ -124,7 +126,7 @@ public class GameManager : MonoBehaviour
     }
     public void PauseGame()
     {
-        
+
         Time.timeScale = 0;
         theMusic.Pause();
     }

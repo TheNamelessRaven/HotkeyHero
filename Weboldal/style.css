@@ -64,3 +64,7 @@ img {
   width: 50%;
   height:50%;
 }
+#table_text{
+  text-size-adjust: 30px;
+  size:100px;
+}
