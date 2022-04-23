@@ -11,13 +11,38 @@
     </tr>
   </thead>
   <tbody>
+<?php
+        if($fetch_data->num_rows() > 0)
+        {
+          foreach($fetch_data->result() as $row)
+          {
+            ?>
+            <tr>
+              <td>
+              <?php 
+              $i=0;
+              if($row->username!=null){
+                echo $i+1;
+              }
+                  ?>
+              </td>
+              <td><?php echo $row->username; ?></td>
+              <td><?php echo $row->Difficulty_name; ?></td>
+              <td><?php echo $row->map_name; ?></td>
+              <td><?php echo $row->Points; ?></td>
+            </tr>
+            <?php
+          }
+        }
+        else
+        {
+        ?>
         <tr>
-            <td class="h1">1</td>
-            <td class="h1">Alma</td>
-            <td class="h1">Közepes</td>
-            <td class="h1">Level 1</td>
-            <td class="h1">20000</td>
+          <td colspan="3">Nem található data</td>
         </tr>
-    </tbody>
+        <?php
+        }
+        ?>
+</tbody>
 </table>
 </div>
