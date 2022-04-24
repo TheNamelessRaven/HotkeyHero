@@ -20,3 +20,5 @@ class Rangs extends CI_Model{
         //$select=
   }
 }
+ 
+

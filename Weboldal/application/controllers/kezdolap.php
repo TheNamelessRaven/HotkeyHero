@@ -56,10 +56,14 @@ class Kezdolap extends CI_Controller{
     
   }
   public function profile(){
+
+    $this->load->model('Users');
+    $data["fetch_data"]=$this->Users->fetch_data();
     $this->load->view('head',['oldal'=>'profile']);
-    $this->load->view('profile');
+    $this->load->view('profile',$data);
     $this->load->view('foot');
     $this->load->library('form_validation');
+    
   }
   public function admin(){
   
