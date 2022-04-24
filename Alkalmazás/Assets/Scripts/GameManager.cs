@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    bool end = false;
     bool pause=true;
     public AudioSource theMusic;
     public bool Play;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     public float totalnotes;
     public Text scoreText;
     public Text multi;
+    
 
     public int missedbutton = 0;
     public int currentMulti;
@@ -49,6 +51,10 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            instance = this;
+            scoreText.text = "Score:0";
+            currentMulti = 1;
+            Score = 0;
             SceneManager.LoadScene("Game-Menu");
         }
         if (!Play)
@@ -73,15 +79,21 @@ public class GameManager : MonoBehaviour
             }
         else
         {
-                if (!theMusic.isPlaying && !resultScreen.activeInHierarchy)
-                {
+            if (!theMusic.isPlaying && !resultScreen.activeInHierarchy)
+            {
+                
+                if (!pause&&!theMusic.isPlaying && end) {
                     Started = false;
-                if (pause = false)
-                {
-                    resultScreen.SetActive(true);
                     finalScore.text = "" + Score;
+                    resultScreen.SetActive(true);
+                    Time.timeScale = 0;
+                    theMusic.Stop();
+                }
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
                     SceneManager.LoadScene("Game-Menu");
                 }
+                
                 }
             
         }
@@ -98,11 +110,6 @@ public class GameManager : MonoBehaviour
         {
             multiTracer++;
             currentMulti++;
-            /*if (multiTresholds[currentMulti - 1] <= multiTracer)
-            {
-                currentMulti = 0;
-                currentMulti++;
-            }*/
         }
        
     }
@@ -127,16 +134,32 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         
-        pauseScreen.SetActive(true);
-        Time.timeScale = 0;
-        pause = true;
-        theMusic.Pause();
+       
+        if (theMusic.isPlaying)
+        {
+            pauseScreen.SetActive(true);
+            Time.timeScale = 0;
+            pause = true;
+            theMusic.Pause();
+        }
+        else
+        {
+            end = true;
+        }
+        
     }
     public void ResumeGame()
     {
-        pauseScreen.SetActive(false);
-        Time.timeScale = 1;
-        theMusic.Play();
-        pause = false;
+        if (!theMusic.isPlaying)
+        {
+            pauseScreen.SetActive(false);
+            Time.timeScale = 1;
+            theMusic.UnPause();
+            pause = false;
+        }
+        else
+        {
+            end = true;
+        }
     }
 }
